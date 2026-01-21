@@ -1,24 +1,6 @@
-  × No solution found when resolving dependencies for split (markers:
-  │ python_full_version == '3.8.*' and platform_machine == 'aarch64' and
-  │ sys_platform == 'linux'):
-  ╰─▶ Because opencv-python==4.5.5.62 depends on numpy{platform_machine
-      == 'aarch64' and sys_platform == 'linux'}>=1.19.3 and your project
-      depends on numpy==1.19.2, we can conclude that your project and
-      opencv-python==4.5.5.62 are incompatible.
-      And because your project depends on opencv-python==4.5.5.62, we can
-      conclude that your project's requirements are unsatisfiable.
+/nfsshare/home/taotang/mage/.venv/lib/python3.8/site-packages/torch/cuda/__init__.py:104: UserWarning: 
+NVIDIA L20 with CUDA capability sm_89 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_37 sm_50 sm_60 sm_70 sm_75.
+If you want to use the NVIDIA L20 GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
 
-      hint: The resolution failed for an environment that is not the current
-      one, consider limiting the environments with `tool.uv.environments`.
-  × No solution found when resolving dependencies for split (markers:
-  │ python_full_version == '3.8.*' and platform_machine == 'aarch64' and
-  │ sys_platform == 'linux'):
-  ╰─▶ Because opencv-python==4.5.5.62 depends on numpy{platform_machine
-      == 'aarch64' and sys_platform == 'linux'}>=1.19.3 and your project
-      depends on numpy==1.19.2, we can conclude that your project and
-      opencv-python==4.5.5.62 are incompatible.
-      And because your project depends on opencv-python==4.5.5.62, we can
-      conclude that your project's requirements are unsatisfiable.
-
-      hint: The resolution failed for an environment that is not the current
-      one, consider limiting the environments with `tool.uv.environments`.
+  warnings.warn(incompatible_device_warn.format(device_name, capability, " ".join(arch_list), device_name))

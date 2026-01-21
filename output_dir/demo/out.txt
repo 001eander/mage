@@ -1,13 +1,13 @@
-Sender: LSF System <lsfadmin@gpu10>
-Subject: Job 301721: <demo> in cluster <cluster_lsf> Done
+Sender: LSF System <lsfadmin@gpu14>
+Subject: Job 301757: <demo> in cluster <cluster_lsf> Done
 
-Job <demo> was submitted from host <mgtgpu01> by user <taotang> in cluster <cluster_lsf> at Wed Jan 21 15:09:39 2026
-Job was executed on host(s) <gpu10>, in queue <gpu>, as user <taotang> in cluster <cluster_lsf> at Wed Jan 21 15:09:39 2026
+Job <demo> was submitted from host <mgtgpu01> by user <taotang> in cluster <cluster_lsf> at Wed Jan 21 16:56:45 2026
+Job was executed on host(s) <gpu14>, in queue <gpu>, as user <taotang> in cluster <cluster_lsf> at Wed Jan 21 16:56:45 2026
 </nfsshare/home/taotang> was used as the home directory.
 </nfsshare/home/taotang/mage> was used as the working directory.
-Started at Wed Jan 21 15:09:39 2026
-Terminated at Wed Jan 21 15:09:48 2026
-Results reported at Wed Jan 21 15:09:48 2026
+Started at Wed Jan 21 16:56:45 2026
+Terminated at Wed Jan 21 16:56:53 2026
+Results reported at Wed Jan 21 16:56:53 2026
 
 Your job looked like:
 
@@ -16,7 +16,6 @@ Your job looked like:
 #!/bin/bash
 
 #BSUB -gpu 'num=1:mode=exclusive_process'
-#BSUB -R 'order[ut]'
 #BSUB -J demo
 #BSUB -oo output_dir/demo/out.txt
 #BSUB -eo output_dir/demo/err.txt
@@ -31,29 +30,36 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   1.64 sec.
-    Max Memory :                                 10 MB
-    Average Memory :                             10.00 MB
+    CPU time :                                   10.18 sec.
+    Max Memory :                                 22 MB
+    Average Memory :                             22.00 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
     Max Swap :                                   -
-    Max Processes :                              4
-    Max Threads :                                7
-    Run time :                                   11 sec.
-    Turnaround time :                            9 sec.
+    Max Processes :                              5
+    Max Threads :                                8
+    Run time :                                   13 sec.
+    Turnaround time :                            8 sec.
 
 The output (if any) follows:
 
-Wed Jan 21 15:09:47 2026       
+Python 3.8.20
+Hello, MAGE!
+PyTorch version: 1.7.1
+CUDA available: True
+Number of CUDA devices: 1
+Current CUDA device: 0
+CUDA device name: NVIDIA L20
+Wed Jan 21 16:56:52 2026       
 +---------------------------------------------------------------------------------------+
-| NVIDIA-SMI 535.183.06             Driver Version: 535.183.06   CUDA Version: 12.2     |
+| NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
 |-----------------------------------------+----------------------+----------------------+
 | GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
 | Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
 |                                         |                      |               MIG M. |
 |=========================================+======================+======================|
-|   0  Tesla V100-PCIE-16GB           Off | 00000000:3B:00.0 Off |                    0 |
-| N/A   38C    P0              25W / 250W |      0MiB / 16384MiB |      0%   E. Process |
+|   0  NVIDIA L20                     Off | 00000000:84:00.0 Off |                    0 |
+| N/A   27C    P8              33W / 350W |      0MiB / 46068MiB |      0%   E. Process |
 |                                         |                      |                  N/A |
 +-----------------------------------------+----------------------+----------------------+
                                                                                          
