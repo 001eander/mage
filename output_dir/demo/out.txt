@@ -1,0 +1,79 @@
+Sender: LSF System <lsfadmin@gpu10>
+Subject: Job 301720: <demo> in cluster <cluster_lsf> Done
+
+Job <demo> was submitted from host <mgtgpu01> by user <taotang> in cluster <cluster_lsf> at Wed Jan 21 15:02:23 2026
+Job was executed on host(s) <gpu10>, in queue <gpu>, as user <taotang> in cluster <cluster_lsf> at Wed Jan 21 15:02:23 2026
+</nfsshare/home/taotang> was used as the home directory.
+</nfsshare/home/taotang/mage> was used as the working directory.
+Started at Wed Jan 21 15:02:23 2026
+Terminated at Wed Jan 21 15:02:27 2026
+Results reported at Wed Jan 21 15:02:27 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+
+#BSUB -gpu 'num=1:mode=exclusive_process'
+#BSUB -R 'order[ut]'
+#BSUB -J demo
+#BSUB -oo output_dir/demo/out.txt
+#BSUB -eo output_dir/demo/err.txt
+
+.venv/bin/python -V
+.venv/bin/python demo.py
+nvidia-smi
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   3.22 sec.
+    Max Memory :                                 19 MB
+    Average Memory :                             19.00 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   10 sec.
+    Turnaround time :                            4 sec.
+
+The output (if any) follows:
+
+Python 3.8.20
+Hello, MAGE!
+PyTorch version: 1.7.1
+CUDA available: True
+Number of CUDA devices: 1
+Current CUDA device: 0
+CUDA device name: Tesla V100-PCIE-16GB
+Wed Jan 21 15:02:27 2026       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.183.06             Driver Version: 535.183.06   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Tesla V100-PCIE-16GB           Off | 00000000:3B:00.0 Off |                    0 |
+| N/A   39C    P0              26W / 250W |      0MiB / 16384MiB |      0%   E. Process |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+
+
+PS:
+
+Read file <output_dir/demo/err.txt> for stderr output of this job.
+

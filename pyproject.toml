@@ -26,12 +26,16 @@ dependencies = [
 requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.uv.sources]
+torch = [
+    { index = "pytorch", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchvision = [
+    { index = "pytorch", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
 [tool.uv]
 index-strategy = "unsafe-best-match"
-
-[[tool.uv.index]]
-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-default = true
 
 [[tool.uv.index]]
 name = "pytorch"
