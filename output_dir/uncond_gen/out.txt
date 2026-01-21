@@ -1,0 +1,57 @@
+Sender: LSF System <lsfadmin@gpu02>
+Subject: Job 301739: <uncond_gen> in cluster <cluster_lsf> Done
+
+Job <uncond_gen> was submitted from host <mgtgpu01> by user <taotang> in cluster <cluster_lsf> at Wed Jan 21 16:36:11 2026
+Job was executed on host(s) <gpu02>, in queue <gpu>, as user <taotang> in cluster <cluster_lsf> at Wed Jan 21 16:36:11 2026
+</nfsshare/home/taotang> was used as the home directory.
+</nfsshare/home/taotang/mage> was used as the working directory.
+Started at Wed Jan 21 16:36:11 2026
+Terminated at Wed Jan 21 16:36:41 2026
+Results reported at Wed Jan 21 16:36:41 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+
+#BSUB -gpu 'num=1:mode=exclusive_process'
+#BSUB -R 'order[r15s]'
+#BSUB -R 'select[hname==gpu02]'
+#BSUB -J uncond_gen
+#BSUB -oo output_dir/uncond_gen/out.txt
+#BSUB -eo output_dir/uncond_gen/err.txt
+
+uv run gen_img_uncond.py --temp 6.0 --num_iter 20 \
+--ckpt pre_train_ckpt/mage-vitb-1600.pth --batch_size 32 --num_images 5 \
+--model mage_vit_base_patch16 --output_dir output_dir/uncond_gen
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   25.65 sec.
+    Max Memory :                                 3299 MB
+    Average Memory :                             2052.67 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              5
+    Max Threads :                                103
+    Run time :                                   33 sec.
+    Turnaround time :                            30 sec.
+
+The output (if any) follows:
+
+Working with z of shape (1, 256, 16, 16) = 65536 dimensions.
+Strict load
+Restored from vqgan_jax_strongaug.ckpt
+
+
+PS:
+
+Read file <output_dir/uncond_gen/err.txt> for stderr output of this job.
+
