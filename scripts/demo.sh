@@ -6,6 +6,6 @@
 #BSUB -oo output_dir/demo/out.txt
 #BSUB -eo output_dir/demo/err.txt
 
-.venv/bin/python -V
-.venv/bin/python demo.py
+uv run python -V
+uv run demo.py
 nvidia-smi

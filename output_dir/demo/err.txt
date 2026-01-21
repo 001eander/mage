@@ -1,0 +1,24 @@
+  × No solution found when resolving dependencies for split (markers:
+  │ python_full_version == '3.8.*' and platform_machine == 'aarch64' and
+  │ sys_platform == 'linux'):
+  ╰─▶ Because opencv-python==4.5.5.62 depends on numpy{platform_machine
+      == 'aarch64' and sys_platform == 'linux'}>=1.19.3 and your project
+      depends on numpy==1.19.2, we can conclude that your project and
+      opencv-python==4.5.5.62 are incompatible.
+      And because your project depends on opencv-python==4.5.5.62, we can
+      conclude that your project's requirements are unsatisfiable.
+
+      hint: The resolution failed for an environment that is not the current
+      one, consider limiting the environments with `tool.uv.environments`.
+  × No solution found when resolving dependencies for split (markers:
+  │ python_full_version == '3.8.*' and platform_machine == 'aarch64' and
+  │ sys_platform == 'linux'):
+  ╰─▶ Because opencv-python==4.5.5.62 depends on numpy{platform_machine
+      == 'aarch64' and sys_platform == 'linux'}>=1.19.3 and your project
+      depends on numpy==1.19.2, we can conclude that your project and
+      opencv-python==4.5.5.62 are incompatible.
+      And because your project depends on opencv-python==4.5.5.62, we can
+      conclude that your project's requirements are unsatisfiable.
+
+      hint: The resolution failed for an environment that is not the current
+      one, consider limiting the environments with `tool.uv.environments`.
