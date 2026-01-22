@@ -104,6 +104,12 @@ def get_args_parser():
     parser.add_argument(
         "--data_path", default="./data/imagenet", type=str, help="dataset path"
     )
+    parser.add_argument(
+        "--subset_n",
+        default=None,
+        type=int,
+        help="Limit the dataset to the first n images",
+    )
 
     parser.add_argument(
         "--output_dir",
@@ -178,6 +184,10 @@ def main(args):
     dataset_train = datasets.ImageFolder(
         os.path.join(args.data_path, "train"), transform=transform_train
     )
+    if args.subset_n is not None and args.subset_n > 0:
+        dataset_train = torch.utils.data.Subset(
+            dataset_train, range(min(args.subset_n, len(dataset_train)))
+        )
     print(dataset_train)
 
     if True:  # args.distributed:

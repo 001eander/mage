@@ -236,12 +236,17 @@ class MaskedGenerativeEncoderViT(nn.Module):
 
         # MAGE variant masking ratio
         self.mask_ratio_min = mask_ratio_min
-        self.mask_ratio_generator = stats.truncnorm(
-            (mask_ratio_min - mask_ratio_mu) / mask_ratio_std,
-            (mask_ratio_max - mask_ratio_mu) / mask_ratio_std,
-            loc=mask_ratio_mu,
-            scale=mask_ratio_std,
-        )
+        self.mask_ratio_std = mask_ratio_std
+        self.mask_ratio_mu = mask_ratio_mu
+        if mask_ratio_std > 0:
+            self.mask_ratio_generator = stats.truncnorm(
+                (mask_ratio_min - mask_ratio_mu) / mask_ratio_std,
+                (mask_ratio_max - mask_ratio_mu) / mask_ratio_std,
+                loc=mask_ratio_mu,
+                scale=mask_ratio_std,
+            )
+        else:
+            self.mask_ratio_generator = None
 
         self.cls_token = nn.Parameter(torch.zeros(1, 1, embed_dim))
         self.pos_embed = nn.Parameter(
@@ -369,7 +374,10 @@ class MaskedGenerativeEncoderViT(nn.Module):
         # masking
         bsz, seq_len = token_indices.size()
         mask_ratio_min = self.mask_ratio_min
-        mask_rate = self.mask_ratio_generator.rvs(1)[0]
+        if self.mask_ratio_generator is not None:
+            mask_rate = self.mask_ratio_generator.rvs(1)[0]
+        else:
+            mask_rate = self.mask_ratio_mu
 
         num_dropped_tokens = int(np.ceil(seq_len * mask_ratio_min))
         num_masked_tokens = int(np.ceil(seq_len * mask_rate))

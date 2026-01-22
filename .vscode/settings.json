@@ -24,5 +24,7 @@
             ],
             "icon": "server"
         }
-    }
+    },
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredDarkColorTheme": "Monokai",
 }
