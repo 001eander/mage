@@ -1,12 +1,11 @@
 from functools import partial
 
+import timm.models.vision_transformer
 import torch
 import torch.nn as nn
-
-import timm.models.vision_transformer
+from omegaconf import OmegaConf
 
 from taming.models.vqgan import VQModel
-from omegaconf import OmegaConf
 
 
 class BertEmbeddings(nn.Module):
@@ -22,14 +21,14 @@ class BertEmbeddings(nn.Module):
         self.LayerNorm = nn.LayerNorm(hidden_size, eps=1e-6)
         self.dropout = nn.Dropout(dropout)
         # position_ids (1, len position emb) is contiguous in memory and exported when serialized
-        self.register_buffer("position_ids", torch.arange(max_position_embeddings).expand((1, -1)))
+        self.register_buffer(
+            "position_ids", torch.arange(max_position_embeddings).expand((1, -1))
+        )
 
-        torch.nn.init.normal_(self.word_embeddings.weight, std=.02)
-        torch.nn.init.normal_(self.position_embeddings.weight, std=.02)
+        torch.nn.init.normal_(self.word_embeddings.weight, std=0.02)
+        torch.nn.init.normal_(self.position_embeddings.weight, std=0.02)
 
-    def forward(
-        self, input_ids
-    ):
+    def forward(self, input_ids):
         input_shape = input_ids.size()
 
         seq_length = input_shape[1]
@@ -47,37 +46,43 @@ class BertEmbeddings(nn.Module):
 
 
 class VisionTransformerMage(timm.models.vision_transformer.VisionTransformer):
-    """ Vision Transformer with support for global average pooling
-    """
-    def __init__(self, global_pool=False, vqgan_ckpt_path='vqgan_jax.ckpt', **kwargs):
+    """Vision Transformer with support for global average pooling"""
+
+    def __init__(self, global_pool=False, vqgan_ckpt_path="vqgan_jax.ckpt", **kwargs):
         super(VisionTransformerMage, self).__init__(**kwargs)
 
         self.global_pool = global_pool
         if self.global_pool:
-            norm_layer = kwargs['norm_layer']
-            embed_dim = kwargs['embed_dim']
+            norm_layer = kwargs["norm_layer"]
+            embed_dim = kwargs["embed_dim"]
             self.fc_norm = norm_layer(embed_dim)
 
             del self.norm  # remove the original norm
 
         # --------------------------------------------------------------------------
         # VQGAN specifics
-        config = OmegaConf.load('config/vqgan.yaml').model
-        self.vqgan = VQModel(ddconfig=config.params.ddconfig,
-                             n_embed=config.params.n_embed,
-                             embed_dim=config.params.embed_dim,
-                             ckpt_path=vqgan_ckpt_path)
+        config = OmegaConf.load("config/vqgan.yaml").model
+        self.vqgan = VQModel(
+            ddconfig=config.params.ddconfig,
+            n_embed=config.params.n_embed,
+            embed_dim=config.params.embed_dim,
+            ckpt_path=vqgan_ckpt_path,
+        )
         for param in self.vqgan.parameters():
             param.requires_grad = False
 
         codebook_size = config.params.n_embed
-        vocab_size = codebook_size + 1000 + 1  # 1024 codebook size, 1000 classes, 1 for mask token.
+        vocab_size = (
+            codebook_size + 1000 + 1
+        )  # 1024 codebook size, 1000 classes, 1 for mask token.
         self.fake_class_label = codebook_size + 1100 - 1024
         self.mask_token_label = vocab_size - 1
-        self.token_emb = BertEmbeddings(vocab_size=vocab_size,
-                                        hidden_size=kwargs['embed_dim'],
-                                        max_position_embeddings=256 + 1,
-                                        dropout=0.1)
+        self.token_emb = BertEmbeddings(
+            vocab_size=vocab_size,
+            hidden_size=kwargs["embed_dim"],
+            max_position_embeddings=self.patch_embed.num_patches + 1,
+            dropout=0.1,
+        )
 
     def forward_features(self, x):
         # tokenization
@@ -89,7 +94,12 @@ class VisionTransformerMage(timm.models.vision_transformer.VisionTransformer):
 
         # concate class token
         token_indices = torch.cat(
-            [torch.zeros(token_indices.size(0), 1).cuda(device=token_indices.device), token_indices], dim=1)
+            [
+                torch.zeros(token_indices.size(0), 1).cuda(device=token_indices.device),
+                token_indices,
+            ],
+            dim=1,
+        )
         token_indices[:, 0] = self.fake_class_label
         token_indices = token_indices.long()
         # bert embedding
@@ -112,13 +122,27 @@ class VisionTransformerMage(timm.models.vision_transformer.VisionTransformer):
 
 def vit_base_patch16(**kwargs):
     model = VisionTransformerMage(
-        patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4, qkv_bias=True,
-        norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
+        patch_size=16,
+        embed_dim=768,
+        depth=12,
+        num_heads=12,
+        mlp_ratio=4,
+        qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, eps=1e-6),
+        **kwargs,
+    )
     return model
 
 
 def vit_large_patch16(**kwargs):
     model = VisionTransformerMage(
-        patch_size=16, embed_dim=1024, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True,
-        norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
+        patch_size=16,
+        embed_dim=1024,
+        depth=24,
+        num_heads=16,
+        mlp_ratio=4,
+        qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, eps=1e-6),
+        **kwargs,
+    )
     return model
