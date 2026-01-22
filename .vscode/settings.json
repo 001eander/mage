@@ -1,0 +1,28 @@
+{
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "ssh": {
+            "path": "ssh",
+            "args": [
+                "SUFE"
+            ],
+            "icon": "remote-explorer"
+        },
+        "tensorboard": {
+            "path": "ssh",
+            "args": [
+                "-L",
+                "16007:localhost:16007",
+                "SUFE"
+            ],
+            "icon": "server"
+        }
+    }
+}

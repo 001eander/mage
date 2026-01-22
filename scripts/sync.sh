@@ -56,7 +56,7 @@ sync_from_remote() {
     # MAGE uses output_dir for checkpoints and logs
     ssh "$remote_server" "mkdir -p $remote_dir/output_dir" || { error "Failed to ensure remote output_dir"; return 1; }
 
-    rsync -azh --delete --exclude='.gitkeep' \
+    rsync -azh --delete --exclude='.gitkeep' --exclude='events*' --exclude='*.pth' \
         "$remote_server:$remote_dir/output_dir/" ./output_dir/ || warn "Failed to sync output_dir/"
 
     log "Remote to local sync completed"
