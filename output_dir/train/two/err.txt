@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "main_pretrain.py", line 312, in <module>
+    main(args)
+  File "main_pretrain.py", line 260, in main
+    train_stats = train_one_epoch(
+  File "/nfsshare/home/taotang/mage/engine_pretrain.py", line 46, in train_one_epoch
+    loss, _, _ = model(samples)
+  File "/nfsshare/home/taotang/mage/.venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/nfsshare/home/taotang/mage/models_mage.py", line 486, in forward
+    latent, gt_indices, token_drop_mask, token_all_mask = self.forward_encoder(imgs)
+  File "/nfsshare/home/taotang/mage/models_mage.py", line 372, in forward_encoder
+    mask_rate = self.mask_ratio_generator.rvs(1)[0]
+  File "/nfsshare/home/taotang/mage/.venv/lib/python3.8/site-packages/scipy/stats/_distn_infrastructure.py", line 467, in rvs
+    return self.dist.rvs(*self.args, **kwds)
+  File "/nfsshare/home/taotang/mage/.venv/lib/python3.8/site-packages/scipy/stats/_distn_infrastructure.py", line 1066, in rvs
+    raise ValueError(message)
+ValueError: Domain error in arguments. The `scale` parameter must be positive for all distributions, and many distributions have restrictions on shape parameters. Please see the `scipy.stats.truncnorm` documentation for details.

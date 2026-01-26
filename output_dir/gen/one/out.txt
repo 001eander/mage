@@ -1,0 +1,64 @@
+Sender: LSF System <lsfadmin@gpu10>
+Subject: Job 302204: <one> in cluster <cluster_lsf> Done
+
+Job <one> was submitted from host <mgtgpu01> by user <taotang> in cluster <cluster_lsf> at Fri Jan 23 15:56:37 2026
+Job was executed on host(s) <gpu10>, in queue <gpu>, as user <taotang> in cluster <cluster_lsf> at Fri Jan 23 15:56:38 2026
+</nfsshare/home/taotang> was used as the home directory.
+</nfsshare/home/taotang/mage> was used as the working directory.
+Started at Fri Jan 23 15:56:38 2026
+Terminated at Fri Jan 23 15:57:07 2026
+Results reported at Fri Jan 23 15:57:07 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+
+#BSUB -gpu 'num=1:mode=exclusive_process'
+#BSUB -R 'order[r15s]'
+#BSUB -R 'select[hname!=gpu13&&hname!=gpu14&&hname!=gpu15&&hname!=gpu16&&hname!=gpu17&&hname!=gpu18]'
+#BSUB -J one
+#BSUB -oo output_dir/gen/one/out.txt
+#BSUB -eo output_dir/gen/one/err.txt
+
+mkdir -p output_dir/gen/one
+rm -rf output_dir/gen/one/*
+
+python3 gen_img_uncond.py \
+--model mage_vit_base_patch16 \
+--temp 0.0 \
+--num_iter 100 \
+--ckpt output_dir/train/one/checkpoint-last.pth \
+--batch_size 1 \
+--num_images 1 \
+--output_dir output_dir/gen/one
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   74.66 sec.
+    Max Memory :                                 3962 MB
+    Average Memory :                             2245.33 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                89
+    Run time :                                   32 sec.
+    Turnaround time :                            30 sec.
+
+The output (if any) follows:
+
+Working with z of shape (1, 256, 16, 16) = 65536 dimensions.
+Strict load
+Restored from vqgan_jax_strongaug.ckpt
+
+
+PS:
+
+Read file <output_dir/gen/one/err.txt> for stderr output of this job.
+

@@ -1,5 +1,6 @@
 pre_train_ckpt/
 vqgan_jax_strongaug.ckpt
+data/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
