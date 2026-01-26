@@ -4,7 +4,8 @@
             "args": [
                 "-L",
                 "16007:localhost:16007",
-                "SUFE"
+                "SUFE",
+                "cd ~/mage && bash --login"
             ],
             "icon": "server",
             "path": "ssh"

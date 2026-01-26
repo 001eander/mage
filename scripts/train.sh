@@ -11,12 +11,16 @@ mkdir -p output_dir/train/one
 rm -rf output_dir/train/one/*
 
 python3 main_pretrain.py \
---mask_ratio_mu 0.8 \
---mask_ratio_std 0 \
 --disable_aug \
 --subset_n 1 \
 --model mage_vit_base_patch16 \
 --data_path ~/data/tiny-imagenet-200 \
 --output_dir ./output_dir/train/one \
---epochs 100 \
+--epochs 2000 \
 --batch_size 1 \
+--smoothing 0.0 \
+--no_share_embedding \
+--mask_ratio_min 0.0 \
+--mask_ratio_max 1.0 \
+--mask_ratio_mu 0.5 \
+--mask_ratio_std 0.5 \

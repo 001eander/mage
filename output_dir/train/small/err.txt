@@ -1,8 +1,0 @@
-   Building mage @ file:///nfsshare/home/taotang/mage
-      Built mage @ file:///nfsshare/home/taotang/mage
-Uninstalled 1 package in 95ms
-Installed 1 package in 81ms
-  File "gen_img_uncond.py", line 146
-    n_ckpt_path = "vqgan_jax_strongaug.ckpt"
-    ^
-IndentationError: unexpected indent

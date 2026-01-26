@@ -160,19 +160,25 @@ class BertEmbeddings(nn.Module):
 
 
 class MlmLayer(nn.Module):
-    def __init__(self, feat_emb_dim, word_emb_dim, vocab_size):
+    def __init__(self, feat_emb_dim, word_emb_dim, vocab_size, share_embedding=True):
         super().__init__()
         self.fc = nn.Linear(feat_emb_dim, word_emb_dim)
         self.gelu = nn.GELU()
         self.ln = nn.LayerNorm(word_emb_dim)
         self.bias = nn.Parameter(torch.zeros(1, 1, vocab_size))
+        self.share_embedding = share_embedding
+        if not share_embedding:
+            self.decoder = nn.Linear(word_emb_dim, vocab_size, bias=False)
 
     def forward(self, x, word_embeddings):
         mlm_hidden = self.fc(x)
         mlm_hidden = self.gelu(mlm_hidden)
         mlm_hidden = self.ln(mlm_hidden)
-        word_embeddings = word_embeddings.transpose(0, 1)
-        logits = torch.matmul(mlm_hidden, word_embeddings)  # 相似度
+        if self.share_embedding:
+            word_embeddings = word_embeddings.transpose(0, 1)
+            logits = torch.matmul(mlm_hidden, word_embeddings)  # 相似度
+        else:
+            logits = self.decoder(mlm_hidden)
         logits = logits + self.bias
         return logits
 
@@ -198,6 +204,8 @@ class MaskedGenerativeEncoderViT(nn.Module):
         mask_ratio_max=1.0,
         mask_ratio_mu=0.55,
         mask_ratio_std=0.25,
+        smoothing=0.1,
+        share_embedding=True,
         vqgan_ckpt_path="vqgan_jax_strongaug.ckpt",
     ):
         super().__init__()
@@ -313,11 +321,12 @@ class MaskedGenerativeEncoderViT(nn.Module):
             feat_emb_dim=decoder_embed_dim,
             word_emb_dim=embed_dim,
             vocab_size=vocab_size,
+            share_embedding=share_embedding,
         )
 
         self.norm_pix_loss = norm_pix_loss
 
-        self.criterion = LabelSmoothingCrossEntropy(smoothing=0.1)
+        self.criterion = LabelSmoothingCrossEntropy(smoothing=smoothing)
 
         self.initialize_weights()
 
@@ -388,8 +397,16 @@ class MaskedGenerativeEncoderViT(nn.Module):
             sorted_noise, _ = torch.sort(
                 noise, dim=1
             )  # ascend: small is remove, large is keep
-            cutoff_drop = sorted_noise[:, num_dropped_tokens - 1 : num_dropped_tokens]
-            cutoff_mask = sorted_noise[:, num_masked_tokens - 1 : num_masked_tokens]
+            if num_dropped_tokens > 0:
+                cutoff_drop = sorted_noise[
+                    :, num_dropped_tokens - 1 : num_dropped_tokens
+                ]
+            else:
+                cutoff_drop = torch.full((bsz, 1), -1.0, device=x.device)
+            if num_masked_tokens > 0:
+                cutoff_mask = sorted_noise[:, num_masked_tokens - 1 : num_masked_tokens]
+            else:
+                cutoff_mask = torch.full((bsz, 1), -1.0, device=x.device)
             token_drop_mask = (noise <= cutoff_drop).float()
             token_all_mask = (noise <= cutoff_mask).float()
             if (

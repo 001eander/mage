@@ -99,6 +99,16 @@ def get_args_parser():
     parser.add_argument(
         "--mask_ratio_std", type=float, default=0.25, help="Mask ratio distribution std"
     )
+    parser.add_argument(
+        "--smoothing", type=float, default=0.1, help="Label smoothing (default: 0.1)"
+    )
+    parser.add_argument(
+        "--no_share_embedding",
+        action="store_false",
+        dest="share_embedding",
+        help="Disable sharing embedding layer",
+    )
+    parser.set_defaults(share_embedding=True)
     parser.add_argument("--grad_clip", type=float, default=3.0, help="Gradient clip")
 
     # Dataset parameters
@@ -231,6 +241,8 @@ def main(args):
         mask_ratio_std=args.mask_ratio_std,
         mask_ratio_min=args.mask_ratio_min,
         mask_ratio_max=args.mask_ratio_max,
+        smoothing=args.smoothing,
+        share_embedding=args.share_embedding,
         vqgan_ckpt_path=vqgan_ckpt_path,
     )
 
