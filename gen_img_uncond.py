@@ -30,7 +30,7 @@ def gen_image(model, bsz, seed, num_iter=12, choice_temperature=4.5, image_size=
     codebook_emb_dim = 256
     codebook_size = 1024
     mask_token_id = model.mask_token_label
-    
+
     # Calculate token grid size from image size (assuming 16x downsampling in VQGAN)
     token_grid_h = image_size // 16
     token_grid_w = image_size // 16
@@ -142,8 +142,8 @@ parser.add_argument(
 
 args = parser.parse_args()
 
-vqgaimg_size=args.image_size,
-    n_ckpt_path = "vqgan_jax_strongaug.ckpt"
+vqgaimg_size = (args.image_size,)
+vqgan_ckpt_path = "vqgan_jax_strongaug.ckpt"
 
 model = models_mage.__dict__[args.model](
     norm_pix_loss=False,

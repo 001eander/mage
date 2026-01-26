@@ -11,6 +11,7 @@ import torch
 import torch.backends.cudnn as cudnn
 import torchvision.datasets as datasets
 import torchvision.transforms as transforms
+import torchvision.utils as vutils
 from torch.utils.tensorboard import SummaryWriter
 
 assert timm.__version__ == "0.3.2"  # version check
@@ -124,6 +125,12 @@ def get_args_parser():
     )
     parser.add_argument("--seed", default=0, type=int)
     parser.add_argument("--resume", default="", help="resume from checkpoint")
+
+    parser.add_argument(
+        "--no_augment",
+        action="store_true",
+        help="Disable data augmentation for overfitting tests",
+    )
 
     parser.add_argument(
         "--start_epoch", default=0, type=int, metavar="N", help="start epoch"
@@ -261,6 +268,13 @@ def main(args):
         optimizer=optimizer,
         loss_scaler=loss_scaler,
     )
+
+    if log_writer is not None:
+        print("log_dir: {}".format(args.log_dir))
+        # log training images
+        images, _ = next(iter(data_loader_train))
+        grid = vutils.make_grid(images[:64], nrow=8, normalize=True)
+        log_writer.add_image("train_images", grid, 0)
 
     print(f"Start training for {args.epochs} epochs")
     start_time = time.time()

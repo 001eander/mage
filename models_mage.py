@@ -172,7 +172,7 @@ class MlmLayer(nn.Module):
         mlm_hidden = self.gelu(mlm_hidden)
         mlm_hidden = self.ln(mlm_hidden)
         word_embeddings = word_embeddings.transpose(0, 1)
-        logits = torch.matmul(mlm_hidden, word_embeddings)
+        logits = torch.matmul(mlm_hidden, word_embeddings)  # 相似度
         logits = logits + self.bias
         return logits
 
