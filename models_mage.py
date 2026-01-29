@@ -205,6 +205,8 @@ class MaskedGenerativeEncoderViT(nn.Module):
         mask_ratio_mu=0.55,
         mask_ratio_std=0.25,
         smoothing=0.1,
+        dropout=0.1,
+        deterministic_mask=False,
         share_embedding=True,
         vqgan_ckpt_path="vqgan_jax_strongaug.ckpt",
     ):
@@ -231,7 +233,7 @@ class MaskedGenerativeEncoderViT(nn.Module):
 
         # --------------------------------------------------------------------------
         # MAGE encoder specifics
-        dropout_rate = 0.1
+        dropout_rate = dropout
         self.patch_embed = PatchEmbed(img_size, patch_size, in_chans, embed_dim)
         num_patches = self.patch_embed.num_patches
 
@@ -239,13 +241,14 @@ class MaskedGenerativeEncoderViT(nn.Module):
             vocab_size=vocab_size,
             hidden_size=embed_dim,
             max_position_embeddings=num_patches + 1,
-            dropout=0.1,
+            dropout=dropout_rate,
         )
 
         # MAGE variant masking ratio
         self.mask_ratio_min = mask_ratio_min
         self.mask_ratio_std = mask_ratio_std
         self.mask_ratio_mu = mask_ratio_mu
+        self.deterministic_mask = deterministic_mask
         if mask_ratio_std > 0:
             self.mask_ratio_generator = stats.truncnorm(
                 (mask_ratio_min - mask_ratio_mu) / mask_ratio_std,
@@ -255,6 +258,11 @@ class MaskedGenerativeEncoderViT(nn.Module):
             )
         else:
             self.mask_ratio_generator = None
+
+        # Pre-generate fixed mask for deterministic mode
+        if deterministic_mask:
+            torch.manual_seed(42)
+            self.register_buffer("fixed_noise", torch.rand(1, num_patches))
 
         self.cls_token = nn.Parameter(torch.zeros(1, 1, embed_dim))
         self.pos_embed = nn.Parameter(
@@ -393,7 +401,11 @@ class MaskedGenerativeEncoderViT(nn.Module):
 
         # it is possible that two elements of the noise is the same, so do a while loop to avoid it
         while True:
-            noise = torch.rand(bsz, seq_len, device=x.device)  # noise in [0, 1]
+            if self.deterministic_mask:
+                # Use fixed noise for deterministic masking
+                noise = self.fixed_noise.expand(bsz, -1).to(x.device)
+            else:
+                noise = torch.rand(bsz, seq_len, device=x.device)  # noise in [0, 1]
             sorted_noise, _ = torch.sort(
                 noise, dim=1
             )  # ascend: small is remove, large is keep

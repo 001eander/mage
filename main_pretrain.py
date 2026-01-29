@@ -24,7 +24,7 @@ from util.misc import NativeScalerWithGradNormCount as NativeScaler
 
 
 def get_args_parser():
-    parser = argparse.ArgumentParser("MAGE pre-training", add_help=False)
+    parser = argparse.ArgumentParser("MAGE pre-training", add_help=True)
     parser.add_argument(
         "--batch_size",
         default=64,
@@ -100,7 +100,18 @@ def get_args_parser():
         "--mask_ratio_std", type=float, default=0.25, help="Mask ratio distribution std"
     )
     parser.add_argument(
+        "--deterministic_mask",
+        action="store_true",
+        help="Use deterministic mask positions (for overfitting tests)",
+    )
+    parser.add_argument(
         "--smoothing", type=float, default=0.1, help="Label smoothing (default: 0.1)"
+    )
+    parser.add_argument(
+        "--dropout",
+        type=float,
+        default=0.1,
+        help="Dropout rate (default: 0.1, set to 0 to disable)",
     )
     parser.add_argument(
         "--no_share_embedding",
@@ -242,6 +253,8 @@ def main(args):
         mask_ratio_min=args.mask_ratio_min,
         mask_ratio_max=args.mask_ratio_max,
         smoothing=args.smoothing,
+        dropout=args.dropout,
+        deterministic_mask=args.deterministic_mask,
         share_embedding=args.share_embedding,
         vqgan_ckpt_path=vqgan_ckpt_path,
     )

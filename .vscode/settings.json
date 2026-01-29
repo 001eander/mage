@@ -5,7 +5,6 @@
                 "-L",
                 "16007:localhost:16007",
                 "SUFE",
-                "cd ~/mage && bash --login"
             ],
             "icon": "server",
             "path": "ssh"
@@ -21,6 +20,6 @@
         }
     },
     "window.autoDetectColorScheme": true,
-    "workbench.preferredDarkColorTheme": "Monokai",
-    "workbench.preferredLightColorTheme": "Solarized Light"
+    "workbench.preferredDarkColorTheme": "Ayu Dark",
+    "workbench.preferredLightColorTheme": "Ayu Light"
 }
