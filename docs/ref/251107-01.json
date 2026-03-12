@@ -1,0 +1,693 @@
+{
+    "code": 0,
+    "minutes": {
+        "audio_detect": 1,
+        "is_cve": false,
+        "keywords": [
+            "损失函数",
+            "生成过程",
+            "token",
+            "分析",
+            "多样性",
+            "数据集",
+            "个数问题",
+            "mask",
+            "距离",
+            "transformer"
+        ],
+        "lang": "zh",
+        "minutes_version": 0,
+        "ori_keywords": [],
+        "paragraphs": [
+            {
+                "end_time": 191174,
+                "lang": "zh",
+                "pid": "1",
+                "sentences": [
+                    {
+                        "end_time": 165376,
+                        "sid": "2",
+                        "start_time": 162816,
+                        "words": [
+                            {
+                                "end_time": 165376,
+                                "ori_text": "",
+                                "start_time": 162816,
+                                "text": "还是我先开始！",
+                                "wid": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "end_time": 191174,
+                        "sid": "3",
+                        "start_time": 166434,
+                        "words": [
+                            {
+                                "end_time": 191174,
+                                "ori_text": "",
+                                "start_time": 166434,
+                                "text": "第一周还在跟5000张搏斗，现在一个比较大的问题是，之前的方法对5000张会存在模式不同，它大概还它的 coverage 大概只有90%左右，然后直接在5000张上面去做各种实验，有点麻烦，我觉得还是1000张去做实验。",
+                                "wid": "3"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 162816
+            },
+            {
+                "end_time": 207187,
+                "lang": "zh",
+                "pid": "3",
+                "sentences": [
+                    {
+                        "end_time": 197180,
+                        "sid": "5",
+                        "start_time": 193260,
+                        "words": [
+                            {
+                                "end_time": 197180,
+                                "ori_text": "",
+                                "start_time": 193260,
+                                "text": "做实验我就尝试各种方法，包括换不同的损失函数。",
+                                "wid": "5"
+                            }
+                        ]
+                    },
+                    {
+                        "end_time": 207187,
+                        "sid": "6",
+                        "start_time": 196547,
+                        "words": [
+                            {
+                                "end_time": 207187,
+                                "ori_text": "",
+                                "start_time": 196547,
+                                "text": "我换成了发现他效果不错，但是他的训练非常不稳定，就容易就只生成一张图片。",
+                                "wid": "6"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 193260
+            },
+            {
+                "end_time": 240238,
+                "lang": "zh",
+                "pid": "5",
+                "sentences": [
+                    {
+                        "end_time": 219482,
+                        "sid": "9",
+                        "start_time": 207402,
+                        "words": [
+                            {
+                                "end_time": 219482,
+                                "ori_text": "",
+                                "start_time": 207402,
+                                "text": "然后不开根本训练不了，就算是我等它 FID 降到一之后，它 FID 根本就降不到一，它会直接跳走。",
+                                "wid": "9"
+                            }
+                        ]
+                    },
+                    {
+                        "end_time": 224077,
+                        "sid": "10",
+                        "start_time": 221837,
+                        "words": [
+                            {
+                                "end_time": 224077,
+                                "ori_text": "",
+                                "start_time": 221837,
+                                "text": "然后我现在还在。",
+                                "wid": "10"
+                            }
+                        ]
+                    },
+                    {
+                        "end_time": 233837,
+                        "sid": "11",
+                        "start_time": 224297,
+                        "words": [
+                            {
+                                "end_time": 233837,
+                                "ori_text": "",
+                                "start_time": 224297,
+                                "text": "再看看有没有什么别的方法，我想用 batch normalization，但是效果也不显，其实也没什么效果。",
+                                "wid": "11"
+                            }
+                        ]
+                    },
+                    {
+                        "end_time": 240238,
+                        "sid": "12",
+                        "start_time": 233638,
+                        "words": [
+                            {
+                                "end_time": 240238,
+                                "ori_text": "",
+                                "start_time": 233638,
+                                "text": "更大的 batch 也没有什么效果，反而会跑着就被out of memory。",
+                                "wid": "12"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 207402
+            },
+            {
+                "end_time": 248995,
+                "lang": "zh",
+                "pid": "6",
+                "sentences": [
+                    {
+                        "end_time": 248995,
+                        "sid": "13",
+                        "start_time": 241155,
+                        "words": [
+                            {
+                                "end_time": 248995,
+                                "ori_text": "",
+                                "start_time": 241155,
+                                "text": "现在的1000张还没有训好的？",
+                                "wid": "13"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 241155
+            },
+            {
+                "end_time": 256069,
+                "lang": "zh",
+                "pid": "7",
+                "sentences": [
+                    {
+                        "end_time": 256069,
+                        "sid": "14",
+                        "start_time": 248289,
+                        "words": [
+                            {
+                                "end_time": 256069,
+                                "ori_text": "",
+                                "start_time": 248289,
+                                "text": "1000张已经1000张现在有一个就差一张图片没有训好。",
+                                "wid": "14"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 248289
+            },
+            {
+                "end_time": 260520,
+                "lang": "zh",
+                "pid": "8",
+                "sentences": [
+                    {
+                        "end_time": 260520,
+                        "sid": "15",
+                        "start_time": 255800,
+                        "words": [
+                            {
+                                "end_time": 260520,
+                                "ori_text": "",
+                                "start_time": 255800,
+                                "text": "5000的话就会差很多。",
+                                "wid": "15"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 255800
+            },
+            {
+                "end_time": 260614,
+                "lang": "zh",
+                "pid": "9",
+                "sentences": [
+                    {
+                        "end_time": 260614,
+                        "sid": "16",
+                        "start_time": 259494,
+                        "words": [
+                            {
+                                "end_time": 260614,
+                                "ori_text": "",
+                                "start_time": 259494,
+                                "text": "差很多。",
+                                "wid": "16"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 259494
+            },
+            {
+                "end_time": 270278,
+                "lang": "zh",
+                "pid": "10",
+                "sentences": [
+                    {
+                        "end_time": 270278,
+                        "sid": "17",
+                        "start_time": 262578,
+                        "words": [
+                            {
+                                "end_time": 270278,
+                                "ori_text": "",
+                                "start_time": 262578,
+                                "text": "1000张目前有一个 fid 214，然后 coverage 99.9就差一张图片。",
+                                "wid": "17"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 262578
+            },
+            {
+                "end_time": 279405,
+                "lang": "zh",
+                "pid": "11",
+                "sentences": [
+                    {
+                        "end_time": 279405,
+                        "sid": "18",
+                        "start_time": 270685,
+                        "words": [
+                            {
+                                "end_time": 279405,
+                                "ori_text": "",
+                                "start_time": 270685,
+                                "text": "ok，然后刚刚尝试的方法有哪些来着？",
+                                "wid": "18"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 270685
+            },
+            {
+                "end_time": 286801,
+                "lang": "zh",
+                "pid": "12",
+                "sentences": [
+                    {
+                        "end_time": 286801,
+                        "sid": "19",
+                        "start_time": 278401,
+                        "words": [
+                            {
+                                "end_time": 286801,
+                                "ori_text": "",
+                                "start_time": 278401,
+                                "text": "包括损失函数换成 hinge，然后更大的 batch，还有 batch normalization。",
+                                "wid": "19"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 278401
+            },
+            {
+                "end_time": 308279,
+                "lang": "zh",
+                "pid": "13",
+                "sentences": [
+                    {
+                        "end_time": 298171,
+                        "sid": "20",
+                        "start_time": 286291,
+                        "words": [
+                            {
+                                "end_time": 298171,
+                                "ori_text": "",
+                                "start_time": 286291,
+                                "text": "bash 是逻辑上不行的，因为你用了 batch，你函数是不稳定的，有随机性的。",
+                                "wid": "20"
+                            }
+                        ]
+                    },
+                    {
+                        "end_time": 308279,
+                        "sid": "21",
+                        "start_time": 298739,
+                        "words": [
+                            {
+                                "end_time": 308279,
+                                "ori_text": "",
+                                "start_time": 298739,
+                                "text": "你要的是一个确定性的解。不太行。",
+                                "wid": "21"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 286291
+            },
+            {
+                "end_time": 314177,
+                "lang": "zh",
+                "pid": "14",
+                "sentences": [
+                    {
+                        "end_time": 314177,
+                        "sid": "22",
+                        "start_time": 305677,
+                        "words": [
+                            {
+                                "end_time": 314177,
+                                "ori_text": "",
+                                "start_time": 305677,
+                                "text": "然后激活函数换成几个激活函数都是里边效果都没有太大的区别。",
+                                "wid": "22"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 305677
+            },
+            {
+                "end_time": 327540,
+                "lang": "zh",
+                "pid": "15",
+                "sentences": [
+                    {
+                        "end_time": 327540,
+                        "sid": "23",
+                        "start_time": 315420,
+                        "words": [
+                            {
+                                "end_time": 327540,
+                                "ori_text": "",
+                                "start_time": 315420,
+                                "text": "其实我觉得这里最大的可能性，你刚刚你说模式崩塌嘛，模式崩塌的原因，其实你分析它，你那个曲线都是正常的是吧？",
+                                "wid": "23"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 315420
+            },
+            {
+                "end_time": 319206,
+                "lang": "zh",
+                "pid": "16",
+                "sentences": [
+                    {
+                        "end_time": 319206,
+                        "sid": "24",
+                        "start_time": 315466,
+                        "words": [
+                            {
+                                "end_time": 319206,
+                                "ori_text": "",
+                                "start_time": 315466,
+                                "text": "不管是 relu leaky relu P relu！",
+                                "wid": "24"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 315466
+            },
+            {
+                "end_time": 332908,
+                "lang": "zh",
+                "pid": "17",
+                "sentences": [
+                    {
+                        "end_time": 332908,
+                        "sid": "25",
+                        "start_time": 329468,
+                        "words": [
+                            {
+                                "end_time": 332908,
+                                "ori_text": "",
+                                "start_time": 329468,
+                                "text": "现在正常的下降，停止住了。",
+                                "wid": "25"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 329468
+            },
+            {
+                "end_time": 343322,
+                "lang": "zh",
+                "pid": "18",
+                "sentences": [
+                    {
+                        "end_time": 343322,
+                        "sid": "26",
+                        "start_time": 333702,
+                        "words": [
+                            {
+                                "end_time": 343322,
+                                "ori_text": "",
+                                "start_time": 333702,
+                                "text": "逻辑上它模式会崩塌就是因为判别器不能够识别出崩塌。",
+                                "wid": "26"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 333702
+            },
+            {
+                "end_time": 354344,
+                "lang": "zh",
+                "pid": "19",
+                "sentences": [
+                    {
+                        "end_time": 354344,
+                        "sid": "27",
+                        "start_time": 344264,
+                        "words": [
+                            {
+                                "end_time": 354344,
+                                "ori_text": "",
+                                "start_time": 344264,
+                                "text": "判别器的性能不够好，那我目前在想的就是我判别器和生成器之间的。",
+                                "wid": "27"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 344264
+            },
+            {
+                "end_time": 361123,
+                "lang": "zh",
+                "pid": "21",
+                "sentences": [
+                    {
+                        "end_time": 361123,
+                        "sid": "29",
+                        "start_time": 355743,
+                        "words": [
+                            {
+                                "end_time": 361123,
+                                "ori_text": "",
+                                "start_time": 355743,
+                                "text": "叠加的比例去改一下，比如说改成五比一。",
+                                "wid": "29"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 355743
+            },
+            {
+                "end_time": 369139,
+                "lang": "zh",
+                "pid": "22",
+                "sentences": [
+                    {
+                        "end_time": 369139,
+                        "sid": "30",
+                        "start_time": 357419,
+                        "words": [
+                            {
+                                "end_time": 369139,
+                                "ori_text": "",
+                                "start_time": 357419,
+                                "text": "你这不用你，你就比例迭代比例你就不要改了，对，就是一比一。",
+                                "wid": "30"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 357419
+            },
+            {
+                "end_time": 372746,
+                "lang": "zh",
+                "pid": "23",
+                "sentences": [
+                    {
+                        "end_time": 372746,
+                        "sid": "31",
+                        "start_time": 369906,
+                        "words": [
+                            {
+                                "end_time": 372746,
+                                "ori_text": "",
+                                "start_time": 369906,
+                                "text": "你现在网络一样大吗？",
+                                "wid": "31"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 369906
+            }
+        ],
+        "recording_transcription": true,
+        "show_promotion": false,
+        "trial_duration": 600
+    },
+    "more": true,
+    "nonce": "bcee33d477e97d0e91375cbe6a1f28b5"
+}

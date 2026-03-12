@@ -145,18 +145,30 @@ args = parser.parse_args()
 vqgaimg_size = (args.image_size,)
 vqgan_ckpt_path = "vqgan_jax_strongaug.ckpt"
 
+checkpoint = torch.load(args.ckpt, map_location="cpu")
+ckpt_args = checkpoint.get("args", None)
+if ckpt_args is not None and hasattr(ckpt_args, "share_embedding"):
+    share_embedding = ckpt_args.share_embedding
+else:
+    # fallback: infer from checkpoint keys
+    share_embedding = "mlm_layer.decoder.weight" not in checkpoint.get("model", {})
+
 model = models_mage.__dict__[args.model](
     norm_pix_loss=False,
     mask_ratio_mu=0.55,
     mask_ratio_std=0.25,
     mask_ratio_min=0.0,
     mask_ratio_max=1.0,
+    share_embedding=share_embedding,
     vqgan_ckpt_path=vqgan_ckpt_path,
 )
 model.to(0)
 
-checkpoint = torch.load(args.ckpt, map_location="cpu")
-model.load_state_dict(checkpoint["model"])
+missing_keys, unexpected_keys = model.load_state_dict(checkpoint["model"], strict=False)
+if missing_keys:
+    print("Missing keys when loading checkpoint:", missing_keys)
+if unexpected_keys:
+    print("Unexpected keys when loading checkpoint:", unexpected_keys)
 model.eval()
 
 num_steps = args.num_images // args.batch_size + 1

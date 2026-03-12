@@ -1,0 +1,651 @@
+{
+    "code": 0,
+    "minutes": {
+        "audio_detect": 1,
+        "is_cve": false,
+        "keywords": [
+            "无限表达能力",
+            "信息损失",
+            "transformer",
+            "目标函数",
+            "网络结构",
+            "初始化",
+            "相关度",
+            "预测过程",
+            "属性",
+            "收敛"
+        ],
+        "lang": "zh",
+        "minutes_version": 1,
+        "ori_keywords": [],
+        "paragraphs": [
+            {
+                "end_time": 73298,
+                "lang": "zh",
+                "pid": "0",
+                "sentences": [
+                    {
+                        "end_time": 73298,
+                        "sid": "0",
+                        "start_time": 70978,
+                        "words": [
+                            {
+                                "end_time": 73298,
+                                "ori_text": "",
+                                "start_time": 70978,
+                                "text": "喂喂。",
+                                "wid": "0"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 70978
+            },
+            {
+                "end_time": 89647,
+                "lang": "zh",
+                "pid": "1",
+                "sentences": [
+                    {
+                        "end_time": 89647,
+                        "sid": "1",
+                        "start_time": 78387,
+                        "words": [
+                            {
+                                "end_time": 89647,
+                                "ori_text": "",
+                                "start_time": 78387,
+                                "text": "我们直接开始吧，嗯，这周还是在处理5000张的问题，这周主要是处理了一下性能问题。",
+                                "wid": "1"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 78387
+            },
+            {
+                "end_time": 103180,
+                "lang": "zh",
+                "pid": "2",
+                "sentences": [
+                    {
+                        "end_time": 103180,
+                        "sid": "2",
+                        "start_time": 91580,
+                        "words": [
+                            {
+                                "end_time": 103180,
+                                "ori_text": "",
+                                "start_time": 91580,
+                                "text": "嗯，现在它一个 batch 大概需要稍等，我看一下，呃，训练一个 batch 大概需要0.3秒，然后一个 apple 是14秒左右。",
+                                "wid": "2"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 91580
+            },
+            {
+                "end_time": 105785,
+                "lang": "zh",
+                "pid": "3",
+                "sentences": [
+                    {
+                        "end_time": 105785,
+                        "sid": "3",
+                        "start_time": 103545,
+                        "words": [
+                            {
+                                "end_time": 105785,
+                                "ori_text": "",
+                                "start_time": 103545,
+                                "text": "嗯嗯。",
+                                "wid": "3"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/101cd4497043902a38302afbcb8e4467b313272c6133069b19051f499cc363de",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 103545
+            },
+            {
+                "end_time": 137103,
+                "lang": "zh",
+                "pid": "4",
+                "sentences": [
+                    {
+                        "end_time": 124439,
+                        "sid": "4",
+                        "start_time": 103639,
+                        "words": [
+                            {
+                                "end_time": 124439,
+                                "ori_text": "",
+                                "start_time": 103639,
+                                "text": "嗯，主要的瓶颈还是数据读取上，我试了那个 num workers 改就是把它调大，但是发现在我的电脑上没有问题，在我别的服务器上没有问题，但是在学校的服务器上它会报一个呃。",
+                                "wid": "4"
+                            }
+                        ]
+                    },
+                    {
+                        "end_time": 137103,
+                        "sid": "5",
+                        "start_time": 124723,
+                        "words": [
+                            {
+                                "end_time": 137103,
+                                "ori_text": "",
+                                "start_time": 124723,
+                                "text": "扩大上下文的问题，我还在 debug 扩大上下文，然后我还得 debug，但是这个无机目前主要最耗时的部分就是这里，然后。",
+                                "wid": "5"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 103639
+            },
+            {
+                "end_time": 142520,
+                "lang": "zh",
+                "pid": "5",
+                "sentences": [
+                    {
+                        "end_time": 133031,
+                        "sid": "6",
+                        "start_time": 127991,
+                        "words": [
+                            {
+                                "end_time": 133031,
+                                "ori_text": "",
+                                "start_time": 127991,
+                                "text": "拿什么上上下下问的问题？",
+                                "wid": "6"
+                            }
+                        ]
+                    },
+                    {
+                        "end_time": 142520,
+                        "sid": "7",
+                        "start_time": 138300,
+                        "words": [
+                            {
+                                "end_time": 142520,
+                                "ori_text": "",
+                                "start_time": 138300,
+                                "text": "你你分析下来，最后是的是 load。",
+                                "wid": "7"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/101cd4497043902a38302afbcb8e4467b313272c6133069b19051f499cc363de",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 127991
+            },
+            {
+                "end_time": 152846,
+                "lang": "zh",
+                "pid": "6",
+                "sentences": [
+                    {
+                        "end_time": 152846,
+                        "sid": "8",
+                        "start_time": 142206,
+                        "words": [
+                            {
+                                "end_time": 152846,
+                                "ori_text": "",
+                                "start_time": 142206,
+                                "text": "loader 对，因为整一个 batch 大概0.29秒，然后光 loader 就要 loader 0.23秒对对。Would. ",
+                                "wid": "8"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 142206
+            },
+            {
+                "end_time": 156464,
+                "lang": "zh",
+                "pid": "7",
+                "sentences": [
+                    {
+                        "end_time": 156464,
+                        "sid": "9",
+                        "start_time": 151144,
+                        "words": [
+                            {
+                                "end_time": 156464,
+                                "ori_text": "",
+                                "start_time": 151144,
+                                "text": "这个非常的不合理哈！",
+                                "wid": "9"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/101cd4497043902a38302afbcb8e4467b313272c6133069b19051f499cc363de",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 151144
+            },
+            {
+                "end_time": 164629,
+                "lang": "zh",
+                "pid": "8",
+                "sentences": [
+                    {
+                        "end_time": 164629,
+                        "sid": "10",
+                        "start_time": 156289,
+                        "words": [
+                            {
+                                "end_time": 164629,
+                                "ori_text": "",
+                                "start_time": 156289,
+                                "text": "对，是的，所以我还我还在想，我还在想办法去去改正这个这一部分，这部分肯定是有问题的。",
+                                "wid": "10"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 156289
+            },
+            {
+                "end_time": 168742,
+                "lang": "zh",
+                "pid": "9",
+                "sentences": [
+                    {
+                        "end_time": 168742,
+                        "sid": "11",
+                        "start_time": 162242,
+                        "words": [
+                            {
+                                "end_time": 168742,
+                                "ori_text": "",
+                                "start_time": 162242,
+                                "text": "你的 load 有特殊的修改吗？还是自然自然有有有这么长时间吗？",
+                                "wid": "11"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/101cd4497043902a38302afbcb8e4467b313272c6133069b19051f499cc363de",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 162242
+            },
+            {
+                "end_time": 184576,
+                "lang": "zh",
+                "pid": "10",
+                "sentences": [
+                    {
+                        "end_time": 184576,
+                        "sid": "12",
+                        "start_time": 168276,
+                        "words": [
+                            {
+                                "end_time": 184576,
+                                "ori_text": "",
+                                "start_time": 168276,
+                                "text": "loader 我目前看起来比较大的问题，好像是它去 loader noise 的部分，因为这个 noise 它本身就在 GPU 上，我不知道它。我目前这个写法好像有一点问题，它会把它先送回 CPU，再从 CPU 读回来。",
+                                "wid": "12"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 168276
+            },
+            {
+                "end_time": 196711,
+                "lang": "zh",
+                "pid": "11",
+                "sentences": [
+                    {
+                        "end_time": 196711,
+                        "sid": "13",
+                        "start_time": 185751,
+                        "words": [
+                            {
+                                "end_time": 196711,
+                                "ori_text": "",
+                                "start_time": 185751,
+                                "text": "这个是你嗯，对你的数据，要所有的数据，不管是你的样本还是你的 noise 都要一直在 C 一直在 GPU 上，你要尽量避免。",
+                                "wid": "13"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/101cd4497043902a38302afbcb8e4467b313272c6133069b19051f499cc363de",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 185751
+            },
+            {
+                "end_time": 189265,
+                "lang": "zh",
+                "pid": "12",
+                "sentences": [
+                    {
+                        "end_time": 189265,
+                        "sid": "14",
+                        "start_time": 185865,
+                        "words": [
+                            {
+                                "end_time": 189265,
+                                "ori_text": "",
+                                "start_time": 185865,
+                                "text": "我重新写个 sample 的问题就不大了。",
+                                "wid": "14"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 185865
+            },
+            {
+                "end_time": 203354,
+                "lang": "zh",
+                "pid": "13",
+                "sentences": [
+                    {
+                        "end_time": 203354,
+                        "sid": "15",
+                        "start_time": 196834,
+                        "words": [
+                            {
+                                "end_time": 203354,
+                                "ori_text": "",
+                                "start_time": 196834,
+                                "text": "两者间的交互你其实基本上不需要把数据从拿出来的。",
+                                "wid": "15"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/101cd4497043902a38302afbcb8e4467b313272c6133069b19051f499cc363de",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 196834
+            },
+            {
+                "end_time": 219769,
+                "lang": "zh",
+                "pid": "14",
+                "sentences": [
+                    {
+                        "end_time": 219769,
+                        "sid": "16",
+                        "start_time": 202889,
+                        "words": [
+                            {
+                                "end_time": 219769,
+                                "ori_text": "",
+                                "start_time": 202889,
+                                "text": "对，我这这就目前这个问题，我改正之后，他应该就会快很多了，就就几乎没有问题了，我还这就是因为就是我目前改正就是它报错还是只能在学校的服务器上报错，然后导致我这方面还是这个，这个还是有点慢。",
+                                "wid": "16"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 202889
+            },
+            {
+                "end_time": 211896,
+                "lang": "zh",
+                "pid": "15",
+                "sentences": [
+                    {
+                        "end_time": 211896,
+                        "sid": "17",
+                        "start_time": 209576,
+                        "words": [
+                            {
+                                "end_time": 211896,
+                                "ori_text": "",
+                                "start_time": 209576,
+                                "text": "嗯嗯。",
+                                "wid": "17"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/101cd4497043902a38302afbcb8e4467b313272c6133069b19051f499cc363de",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 209576
+            },
+            {
+                "end_time": 226124,
+                "lang": "zh",
+                "pid": "16",
+                "sentences": [
+                    {
+                        "end_time": 226124,
+                        "sid": "18",
+                        "start_time": 220624,
+                        "words": [
+                            {
+                                "end_time": 226124,
+                                "ori_text": "",
+                                "start_time": 220624,
+                                "text": "但是我已经有眉目了，就是。呃，感染问题不大。",
+                                "wid": "18"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 220624
+            },
+            {
+                "end_time": 232256,
+                "lang": "zh",
+                "pid": "17",
+                "sentences": [
+                    {
+                        "end_time": 232256,
+                        "sid": "19",
+                        "start_time": 220676,
+                        "words": [
+                            {
+                                "end_time": 232256,
+                                "ori_text": "",
+                                "start_time": 220676,
+                                "text": "嗯嗯嗯嗯嗯 data load ，正常情况下它应该是不会很慢的，就是嗯这个嗯。",
+                                "wid": "19"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/101cd4497043902a38302afbcb8e4467b313272c6133069b19051f499cc363de",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 220676
+            },
+            {
+                "end_time": 242601,
+                "lang": "zh",
+                "pid": "18",
+                "sentences": [
+                    {
+                        "end_time": 242601,
+                        "sid": "20",
+                        "start_time": 232341,
+                        "words": [
+                            {
+                                "end_time": 242601,
+                                "ori_text": "",
+                                "start_time": 232341,
+                                "text": "这里我。应该是的，行为有点问题。是内置的 sample 了，就是可能这一块有点问题。",
+                                "wid": "20"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 232341
+            },
+            {
+                "end_time": 251689,
+                "lang": "zh",
+                "pid": "19",
+                "sentences": [
+                    {
+                        "end_time": 239843,
+                        "sid": "21",
+                        "start_time": 233943,
+                        "words": [
+                            {
+                                "end_time": 239843,
+                                "ori_text": "",
+                                "start_time": 233943,
+                                "text": "然后，然后。sampler 你不是用的是内置的 sampler 吗？",
+                                "wid": "21"
+                            }
+                        ]
+                    },
+                    {
+                        "end_time": 251689,
+                        "sid": "22",
+                        "start_time": 243209,
+                        "words": [
+                            {
+                                "end_time": 251689,
+                                "ori_text": "",
+                                "start_time": 243209,
+                                "text": "你现在觉得它大致问题是你就是哪一行代码？哪个位置有问题，你觉得是怎么回事？",
+                                "wid": "22"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/101cd4497043902a38302afbcb8e4467b313272c6133069b19051f499cc363de",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 233943
+            }
+        ],
+        "recording_transcription": true,
+        "show_promotion": false,
+        "trial_duration": 600
+    },
+    "more": true,
+    "nonce": "4ed811746485b51749b42bd40b573671"
+}

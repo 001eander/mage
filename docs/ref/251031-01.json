@@ -1,0 +1,665 @@
+{
+    "code": 0,
+    "minutes": {
+        "audio_detect": 1,
+        "is_cve": false,
+        "keywords": [
+            "真实分布",
+            "单通道",
+            "确定性",
+            "公式",
+            "激活函数",
+            "生成新样本",
+            "data",
+            "语义中心",
+            "数据量",
+            "语义方向"
+        ],
+        "lang": "zh",
+        "minutes_version": 1,
+        "ori_keywords": [],
+        "paragraphs": [
+            {
+                "end_time": 86339,
+                "lang": "zh",
+                "pid": "0",
+                "sentences": [
+                    {
+                        "end_time": 86339,
+                        "sid": "0",
+                        "start_time": 84959,
+                        "words": [
+                            {
+                                "end_time": 86339,
+                                "ori_text": "",
+                                "start_time": 84959,
+                                "text": "喂喂喂。",
+                                "wid": "0"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 84959
+            },
+            {
+                "end_time": 96069,
+                "lang": "zh",
+                "pid": "1",
+                "sentences": [
+                    {
+                        "end_time": 96069,
+                        "sid": "1",
+                        "start_time": 92489,
+                        "words": [
+                            {
+                                "end_time": 96069,
+                                "ori_text": "",
+                                "start_time": 92489,
+                                "text": "你知道吗。",
+                                "wid": "1"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 92489
+            },
+            {
+                "end_time": 96694,
+                "lang": "zh",
+                "pid": "2",
+                "sentences": [
+                    {
+                        "end_time": 96694,
+                        "sid": "2",
+                        "start_time": 93334,
+                        "words": [
+                            {
+                                "end_time": 96694,
+                                "ori_text": "",
+                                "start_time": 93334,
+                                "text": "喂喂喂 ok 可以可以。",
+                                "wid": "2"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/3689029f3cd73e764ed25401f32b3be85897d6e97a3826a0e0da987ba15131a7",
+                    "is_edit": false,
+                    "user_id": "144115352998867261",
+                    "user_key": "3Aec5-dYZkqdHkKEIo_RdcmRaSfTSXBWL1x_vNy1dXc",
+                    "user_name": "王靖豫"
+                },
+                "start_time": 93334
+            },
+            {
+                "end_time": 97203,
+                "lang": "zh",
+                "pid": "3",
+                "sentences": [
+                    {
+                        "end_time": 97203,
+                        "sid": "3",
+                        "start_time": 93363,
+                        "words": [
+                            {
+                                "end_time": 97203,
+                                "ori_text": "",
+                                "start_time": 93363,
+                                "text": "嗯，可以听到。",
+                                "wid": "3"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 93363
+            },
+            {
+                "end_time": 144462,
+                "lang": "zh",
+                "pid": "4",
+                "sentences": [
+                    {
+                        "end_time": 120228,
+                        "sid": "4",
+                        "start_time": 99208,
+                        "words": [
+                            {
+                                "end_time": 120228,
+                                "ori_text": "",
+                                "start_time": 99208,
+                                "text": "啊，还是我先开始，呃，上一周主要是把从，呃，从那个换到，然后这个过程中还是蛮直觉的，就是呃，换到之后它突然出现。",
+                                "wid": "4"
+                            }
+                        ]
+                    },
+                    {
+                        "end_time": 144462,
+                        "sid": "5",
+                        "start_time": 121162,
+                        "words": [
+                            {
+                                "end_time": 144462,
+                                "ori_text": "",
+                                "start_time": 121162,
+                                "text": "哎，我突然出现一个问题，就是它的异常，然后就是我网络结构没有变化，但是我的生成器和判别器的 loss 都异常的绝对值异常的大，大概有100多甚至四五百，然后就然后我后来自己去调了一下，我发现我把学习率再降低一个数量级。",
+                                "wid": "5"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 99208
+            },
+            {
+                "end_time": 144194,
+                "lang": "zh",
+                "pid": "5",
+                "sentences": [
+                    {
+                        "end_time": 144194,
+                        "sid": "6",
+                        "start_time": 138794,
+                        "words": [
+                            {
+                                "end_time": 144194,
+                                "ori_text": "",
+                                "start_time": 138794,
+                                "text": "嗯嗯。嗯嗯。嗯嗯。",
+                                "wid": "6"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 138794
+            },
+            {
+                "end_time": 167790,
+                "lang": "zh",
+                "pid": "6",
+                "sentences": [
+                    {
+                        "end_time": 167790,
+                        "sid": "7",
+                        "start_time": 144650,
+                        "words": [
+                            {
+                                "end_time": 167790,
+                                "ori_text": "",
+                                "start_time": 144650,
+                                "text": "它就恢复正常了，但是这样子的话学习率就太小了，它整个学习的进度就有点慢啊，然后呃能学好它能再收敛，但是它很慢，我就有点不能接受，然后我就又研究了一下，我发现我可以呃，先以一个很小的学习率开始，然后有一个热身的过程，学习率逐渐增大。",
+                                "wid": "7"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 144650
+            },
+            {
+                "end_time": 170909,
+                "lang": "zh",
+                "pid": "7",
+                "sentences": [
+                    {
+                        "end_time": 157922,
+                        "sid": "8",
+                        "start_time": 152602,
+                        "words": [
+                            {
+                                "end_time": 157922,
+                                "ori_text": "",
+                                "start_time": 152602,
+                                "text": "还能学好吗？嗯嗯。",
+                                "wid": "8"
+                            }
+                        ]
+                    },
+                    {
+                        "end_time": 170909,
+                        "sid": "9",
+                        "start_time": 165369,
+                        "words": [
+                            {
+                                "end_time": 170909,
+                                "ori_text": "",
+                                "start_time": 165369,
+                                "text": "嗯嗯。",
+                                "wid": "9"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 152602
+            },
+            {
+                "end_time": 190727,
+                "lang": "zh",
+                "pid": "8",
+                "sentences": [
+                    {
+                        "end_time": 179978,
+                        "sid": "10",
+                        "start_time": 168738,
+                        "words": [
+                            {
+                                "end_time": 179978,
+                                "ori_text": "",
+                                "start_time": 168738,
+                                "text": "然后再再按照之前的余弦退货，再出现时间小，然后但是这样又有一个问题，他在学了一段时间之后，他就。",
+                                "wid": "10"
+                            }
+                        ]
+                    },
+                    {
+                        "end_time": 190727,
+                        "sid": "11",
+                        "start_time": 180167,
+                        "words": [
+                            {
+                                "end_time": 190727,
+                                "ori_text": "",
+                                "start_time": 180167,
+                                "text": "停住了啊，不管是 error fid 还是 coverage 都停住了，然后这个时候学习率已经很小了，已经没什么用了，然后我一开始觉得是网络的问题。",
+                                "wid": "11"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 168738
+            },
+            {
+                "end_time": 184747,
+                "lang": "zh",
+                "pid": "9",
+                "sentences": [
+                    {
+                        "end_time": 184747,
+                        "sid": "12",
+                        "start_time": 181347,
+                        "words": [
+                            {
+                                "end_time": 184747,
+                                "ori_text": "",
+                                "start_time": 181347,
+                                "text": "嗯嗯。嗯嗯。",
+                                "wid": "12"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 181347
+            },
+            {
+                "end_time": 201520,
+                "lang": "zh",
+                "pid": "10",
+                "sentences": [
+                    {
+                        "end_time": 201520,
+                        "sid": "13",
+                        "start_time": 190800,
+                        "words": [
+                            {
+                                "end_time": 201520,
+                                "ori_text": "",
+                                "start_time": 190800,
+                                "text": "但是当我试着把网络再放大之后，它它整个训练的速度就不能接受了，它一个 apple 可以要跑好久好久，然后然后。",
+                                "wid": "13"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 190800
+            },
+            {
+                "end_time": 201537,
+                "lang": "zh",
+                "pid": "11",
+                "sentences": [
+                    {
+                        "end_time": 201537,
+                        "sid": "14",
+                        "start_time": 200197,
+                        "words": [
+                            {
+                                "end_time": 201537,
+                                "ori_text": "",
+                                "start_time": 200197,
+                                "text": "嗯嗯。",
+                                "wid": "14"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 200197
+            },
+            {
+                "end_time": 212142,
+                "lang": "zh",
+                "pid": "12",
+                "sentences": [
+                    {
+                        "end_time": 212142,
+                        "sid": "15",
+                        "start_time": 201742,
+                        "words": [
+                            {
+                                "end_time": 212142,
+                                "ori_text": "",
+                                "start_time": 201742,
+                                "text": "我，然后我就觉得不应该是网络的问题，应该是别的的问题，然后我又研究了一下这个学习率，我发现有一种东西叫重启就是。",
+                                "wid": "15"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 201742
+            },
+            {
+                "end_time": 212723,
+                "lang": "zh",
+                "pid": "13",
+                "sentences": [
+                    {
+                        "end_time": 212723,
+                        "sid": "16",
+                        "start_time": 211463,
+                        "words": [
+                            {
+                                "end_time": 212723,
+                                "ori_text": "",
+                                "start_time": 211463,
+                                "text": "嗯嗯。",
+                                "wid": "16"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 211463
+            },
+            {
+                "end_time": 223997,
+                "lang": "zh",
+                "pid": "14",
+                "sentences": [
+                    {
+                        "end_time": 223997,
+                        "sid": "17",
+                        "start_time": 212177,
+                        "words": [
+                            {
+                                "end_time": 223997,
+                                "ori_text": "",
+                                "start_time": 212177,
+                                "text": "我的余弦减小到一个很小的值之后，我可以再进入一个新的周期，然后就是通过这个方式来让它继续，呃，继续去运行。",
+                                "wid": "17"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 212177
+            },
+            {
+                "end_time": 230051,
+                "lang": "zh",
+                "pid": "15",
+                "sentences": [
+                    {
+                        "end_time": 230051,
+                        "sid": "18",
+                        "start_time": 224451,
+                        "words": [
+                            {
+                                "end_time": 230051,
+                                "ori_text": "",
+                                "start_time": 224451,
+                                "text": "嗯嗯。那余弦重启那个是具体怎么弄的？",
+                                "wid": "18"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 224451
+            },
+            {
+                "end_time": 239323,
+                "lang": "zh",
+                "pid": "16",
+                "sentences": [
+                    {
+                        "end_time": 227121,
+                        "sid": "19",
+                        "start_time": 224501,
+                        "words": [
+                            {
+                                "end_time": 227121,
+                                "ori_text": "",
+                                "start_time": 224501,
+                                "text": "然后发现它确实有用。",
+                                "wid": "19"
+                            }
+                        ]
+                    },
+                    {
+                        "end_time": 239323,
+                        "sid": "20",
+                        "start_time": 229103,
+                        "words": [
+                            {
+                                "end_time": 239323,
+                                "ori_text": "",
+                                "start_time": 229103,
+                                "text": "预先重启就是。torch pytorch 提供了一个。一个一个一个东西，我屏幕共享一下。",
+                                "wid": "20"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 224501
+            },
+            {
+                "end_time": 238196,
+                "lang": "zh",
+                "pid": "17",
+                "sentences": [
+                    {
+                        "end_time": 238196,
+                        "sid": "21",
+                        "start_time": 235496,
+                        "words": [
+                            {
+                                "end_time": 238196,
+                                "ori_text": "",
+                                "start_time": 235496,
+                                "text": "嗯嗯。",
+                                "wid": "21"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 235496
+            },
+            {
+                "end_time": 257860,
+                "lang": "zh",
+                "pid": "18",
+                "sentences": [
+                    {
+                        "end_time": 257860,
+                        "sid": "22",
+                        "start_time": 244580,
+                        "words": [
+                            {
+                                "end_time": 257860,
+                                "ori_text": "",
+                                "start_time": 244580,
+                                "text": "呃，这里它提供了一个呃，一个调度方案，就叫，呃，带有热重启的预先退火，然后如果把它画成 CC 地图的话，它大概就是这个样子。",
+                                "wid": "22"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn//c25b1e9f30f9fe26e69712487b0d73d3f77c54a0275150dc762c99f51fac4d60",
+                    "is_edit": false,
+                    "user_id": "144115226551832842",
+                    "user_key": "g8b1ifxsw1QcIK7puwUJ9HIB1CTNAcYWQUTkqhtIqoY",
+                    "user_name": "陶唐"
+                },
+                "start_time": 244580
+            },
+            {
+                "end_time": 261203,
+                "lang": "zh",
+                "pid": "19",
+                "sentences": [
+                    {
+                        "end_time": 261203,
+                        "sid": "23",
+                        "start_time": 253383,
+                        "words": [
+                            {
+                                "end_time": 261203,
+                                "ori_text": "",
+                                "start_time": 253383,
+                                "text": "嗯嗯。嗯嗯。嗯嗯。",
+                                "wid": "23"
+                            }
+                        ]
+                    }
+                ],
+                "speaker": {
+                    "avatar_url": "https://meeting-75420.picgzc.qpic.cn/88a4bb78adea78160ac59fc83b9858c78b9bf04ad545e0604f61e4a98aea75b1",
+                    "is_edit": false,
+                    "user_id": "144115351390001892",
+                    "user_key": "dfgkINFVEcrpVjeNVVEYBDbhTb72bTBgx1huaFlzpiY",
+                    "user_name": "周志明"
+                },
+                "start_time": 253383
+            }
+        ],
+        "recording_transcription": true,
+        "show_promotion": false,
+        "trial_duration": 600
+    },
+    "more": true,
+    "nonce": "354092b63178d65e282d75b1092bb015"
+}
